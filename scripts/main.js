@@ -1,4 +1,4 @@
-import {getOfficers, useOfficers} from "./officers/officerProvider.js"
+/*import {getOfficers, useOfficers} from "./officers/officerProvider.js"
 
 getOfficers()
 .then(() => {
@@ -6,4 +6,11 @@ getOfficers()
     console.log(officerArray)
 }
 
-)
+)*/
+import {getCriminals, useCriminals} from "./criminals/criminalProvider.js"
+
+getCriminals()
+.then(() => {
+    const criminalArray = useCriminals()
+    console.table(criminalArray)
+})
