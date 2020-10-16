@@ -1,5 +1,5 @@
-export const CriminalHtml = (criminalArr) => {
-    for (const criminal of criminalArr) {
+// Takes a criminal object and creates the html string
+export const CriminalHtml = (criminal) => {
         return `
         <div class="criminal-card">
         <h3>${criminal.name}</h3>
@@ -9,5 +9,4 @@ export const CriminalHtml = (criminalArr) => {
         <p>Term end: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</P>
         </div>
         `
-    }
 }
