@@ -7,7 +7,7 @@ export const CriminalList = () => {
     .then(() => {
         const criminalArray = useCriminals()
         let criminalHTMLRep = ""
-        const contentContainer = document.querySelector(".criminal-grid")
+        const contentContainer = document.querySelector(".criminalsContainer")
         for (const criminal of criminalArray) {
             criminalHTMLRep += CriminalHtml(criminal)
         }
