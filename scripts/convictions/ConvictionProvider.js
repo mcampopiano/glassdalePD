@@ -9,6 +9,6 @@ export const getConvictions = () => {
         variable to what is in the response from the API.
     */
    return fetch("https://criminals.glassdale.us/crimes")
-   .then(response = response.json())
+   .then(response => response.json())
    .then(convictionsArr => convictions = convictionsArr)
 }
