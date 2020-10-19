@@ -11,7 +11,7 @@ export const CriminalList = () => {
         for (const criminal of criminalArray) {
             criminalHTMLRep += CriminalHtml(criminal)
         }
-        contentContainer.innerHTML += criminalHTMLRep
+        contentContainer.innerHTML = criminalHTMLRep
     }
     )
 }
