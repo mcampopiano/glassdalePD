@@ -1,10 +1,13 @@
-.criminalsContainer {
+
+.criminalsContainer, .officersContainer {
+    border: 4px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 3px;
 }
 
-.criminal-card {
+.criminal-card, .officer-card {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 1px;
@@ -13,7 +16,7 @@
     margin-bottom: 5px;
 }
 
-.criminal-card:hover {
+.criminal-card:hover, .officer-card:hover {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 10px;
