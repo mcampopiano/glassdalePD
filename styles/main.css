@@ -1,8 +1,10 @@
+
 .criminalsContainer, .officersContainer {
     border: 4px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 3px;
 }
 
 .criminal-card, .officer-card {
