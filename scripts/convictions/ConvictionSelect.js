@@ -1,36 +1,6 @@
 
 import { getConvictions, useConvictions } from "./ConvictionProvider.js"
 
-// ***********************THIS WAS MY CODE BEFORE REFACTORING WITH EVENT HUB *******************
-// /*
-//  *   ConvictionSelect component that renders a select HTML element
-//  *   which lists all convictions in the Glassdale PD API
-//  */
-
-// // Get a reference to the DOM element where the <select> will be rendered
-// const contentTarget = document.querySelector(".filters__crime")
-
-// export const ConvictionSelect = () => {
-//     // Get all convictions from application state
-//     getConvictions()
-//     .then(() => {
-
-//         const convictions = useConvictions()
-//         render(convictions)
-//     }
-//     )
-// }
-
-// const render = convictionsCollection => {
-//     /*
-//         Use interpolation here to invoke the map() method on
-//         the convictionsCollection to generate the option elements.
-//         Look back at the example provided above.
-//     */
-//     contentTarget.innerHTML = 
-        
-// }
-
 /*
     Which element in your HTML contains all components?
     That's your Event Hub. Get a reference to it here.
