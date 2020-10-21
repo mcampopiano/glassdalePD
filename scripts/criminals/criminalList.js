@@ -1,6 +1,7 @@
 import {getCriminals, useCriminals} from "./criminalProvider.js"
 import {CriminalHtml} from "./criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { useOfficers } from "../officers/officerProvider.js"
 
 // We need a reference to the eventHub in each module/component that will need to either listen or dispatch to it
 const eventHub = document.querySelector(".container")
@@ -38,6 +39,29 @@ eventHub.addEventListener('crimeChosen', event => {
         */
         const matchingCriminals = appStateCriminals.filter(currentCriminal => {
             return currentCriminal.conviction === crimeId.name
+        })
+        console.log("Matching criminals: ", matchingCriminals)
+       for (const criminal of matchingCriminals) {
+        filteredCriminalHtmlRep += CriminalHtml(criminal)
+    }
+    contentTarget.innerHTML = `<h2>Criminals:</h2> <p> ${filteredCriminalHtmlRep}</p>`
+    }    
+})
+// Listen for the event created in OfficerSelect.js
+eventHub.addEventListener('officerChosen', event => {
+        const appStateCriminals = useCriminals()
+        const officers = useOfficers()
+        const arrestingCop = officers.find(officerObj => {
+            return officerObj.id === event.detail.officerThatWasChosen
+        })
+    let filteredCriminalHtmlRep = ""
+    // Use the property you added to the event detail.
+    if (event.detail.crimeThatWasChosen !== "0"){
+        /*
+            Filter the criminals application state down to the people that committed the crime
+        */
+        const matchingCriminals = appStateCriminals.filter(currentCriminal => {
+            return currentCriminal.arrestingOfficer === arrestingCop.name
         })
         console.log("Matching criminals: ", matchingCriminals)
        for (const criminal of matchingCriminals) {
