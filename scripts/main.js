@@ -10,8 +10,4 @@ ConvictionSelect()
 OfficerList()
 OfficerSelect()
 NoteForm()
-getNotes()
-.then(() => {
-    const notesArr = useNotes()
-    console.log(notesArr)})
 
