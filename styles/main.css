@@ -44,3 +44,7 @@ body {
     flex-direction: column;
     width: 250px;
 }
+.noteCard {
+    border: 2px solid black;
+    margin: 10px;
+}
