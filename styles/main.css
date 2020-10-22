@@ -1,7 +1,11 @@
+body {
+    margin: 0;
+}
 
 .criminalsContainer, .officersContainer {
     border: 4px solid black;
     display: flex;
+    flex: 3;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 3px;
@@ -27,4 +31,16 @@
 
 .investigations {
     display: flex;
+}
+
+.notesContainer {
+    border: 4px solid black;
+    flex: 1
+}
+
+.form {
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
 }
