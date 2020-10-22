@@ -24,15 +24,14 @@ eventHub.addEventListener("click", event => {
     if(event.target.id === "saveNote") {
     // get the input values from the form
     const dateInterviewed = document.querySelector("#note--dateOfInterview").value
-    const topic = document.querySelector("#note--case").value
+    const Case = document.querySelector("#note--case").value
     const author = document.querySelector("#note--author").value
     const suspect = document.querySelector("#note--suspect").value
     const note = document.querySelector("#note--note").value
-    console.log("The topic should be here: ", topic)
 
     const noteObj = {
         dateInterviewed,
-        topic,
+        Case,
         author,
         suspect,
         note
