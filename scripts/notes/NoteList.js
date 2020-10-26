@@ -9,7 +9,7 @@ export const NoteList = () => {
     getNotes()
     .then(() => {
         const noteArray = useNotes()
-        console.log(noteArray)
+        // console.log(noteArray)
         let noteHtmlString = ""
         for (const note of noteArray) {
             noteHtmlString += noteHTML(note)

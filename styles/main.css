@@ -2,6 +2,11 @@ body {
     margin: 0;
 }
 
+header {
+    display: flex;
+    
+}
+
 .criminalsContainer, .officersContainer {
     border: 4px solid black;
     display: flex;
@@ -47,4 +52,10 @@ body {
 .noteCard {
     border: 2px solid black;
     margin: 10px;
+}
+
+.alibi__list {
+    border: 3px solid black;
+    height: 200px;
+    overflow: scroll;
 }
