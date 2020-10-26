@@ -9,10 +9,3 @@ export const noteHTML = noteObj => {
     </section>
     `
 }
-
-// "dateInterviewed": "2020-10-22",
-//       "topic": "test 26",
-//       "author": "Mario",
-//       "suspect": "Typo",
-//       "note": "If this works...",
-//       "id": 1

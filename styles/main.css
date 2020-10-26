@@ -16,7 +16,7 @@ header {
     margin-top: 3px;
 }
 
-.criminal-card, .officer-card {
+.criminal-card, .officer-card, .statement--cards {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 1px;
@@ -25,7 +25,7 @@ header {
     margin-bottom: 5px;
 }
 
-.criminal-card:hover, .officer-card:hover {
+.criminal-card:hover, .officer-card:hover, .statement--cards:hover {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 10px;
@@ -58,4 +58,9 @@ header {
     border: 3px solid black;
     height: 200px;
     overflow: scroll;
+}
+
+.witnessBtn {
+    height: 50px;
+    align-self: flex-end;
 }
