@@ -1,5 +1,6 @@
 
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
+import { AlibiListener } from "./criminals/AlibiList.js"
 import {CriminalList} from "./criminals/criminalList.js"
 import { getNotes, useNotes } from "./notes/NoteDataProvider.js"
 import { NoteForm } from "./notes/NoteForm.js"
@@ -12,3 +13,4 @@ OfficerList()
 OfficerSelect()
 NoteForm()
 NoteList()
+AlibiListener()
