@@ -36,14 +36,16 @@ eventHub.addEventListener("click", event => {
     const dateInterviewed = document.querySelector("#note--dateOfInterview").value
     const Case = document.querySelector("#note--case").value
     const author = document.querySelector("#note--author").value
-    const suspect = document.querySelector("#note--suspect").value
+    // const suspect = document.querySelector("#note--suspect").value
     const note = document.querySelector("#note--note").value
+    const criminalId = parseInt(document.querySelector("#noteForm--criminal").value)
+    console.log("criminalId: ", criminalId)
 
     const noteObj = {
         dateInterviewed,
         Case,
         author,
-        suspect,
+        criminalId,
         note
 
     }

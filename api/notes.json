@@ -1,4 +1,12 @@
 {
   "notes": [
+    {
+      "dateInterviewed": "2020-11-05",
+      "Case": "5",
+      "author": "Mario",
+      "criminalId": 4,
+      "note": "Testing how this works",
+      "id": 1
+    }
   ]
 }
