@@ -1,5 +1,5 @@
 import { useCriminals } from "../criminals/criminalProvider.js"
-import {getNotes, useNotes} from "./NoteDataProvider.js"
+import {deleteNote, getNotes, useNotes} from "./NoteDataProvider.js"
 const contentContainer = document.querySelector(".notesContainer")
 const eventHub = document.querySelector(".container")
 
@@ -8,7 +8,6 @@ eventHub.addEventListener("noteStateChanged", () => NoteList())
 const render = (noteArr, criminalArr) => {
     contentContainer.innerHTML = noteArr.map(note => {
         const suspect = criminalArr.find(criminal => criminal.id === note.criminalId)
-        console.log("suspect,", suspect)
 
         return `
         <section class="noteCard">
@@ -17,6 +16,7 @@ const render = (noteArr, criminalArr) => {
         <p>Recording Officer: ${note.author}<p>
         <p>Suspect/s interviewed: ${suspect.name}<p>
         <p>${note.note}<p>
+        <button id="deleteNote--${note.id}">Delete</button>
         </section>
         `
     })
@@ -38,3 +38,15 @@ export const NoteList = () => {
         // ${noteHtmlString}`
     })
 }
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteNote--")) {
+        let [prefix, id] = event.target.id.split("--")
+        deleteNote(id)
+        .then(() => {
+            const updatedNotes = useNotes()
+            const criminals = useCriminals()
+            render(updatedNotes, criminals)
+        })
+    }
+})
