@@ -8,7 +8,6 @@ eventHub.addEventListener("noteStateChanged", () => NoteList())
 const render = (noteArr, criminalArr) => {
     contentContainer.innerHTML = noteArr.map(note => {
         const suspect = criminalArr.find(criminal => criminal.id === note.criminalId)
-        console.log("Criminal Arr:", criminalArr, "Suspect", suspect)
         return `
         <section class="noteCard">
         <h3>Case ${note.Case}</h3>
