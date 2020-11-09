@@ -7,6 +7,14 @@
       "criminalId": 4,
       "note": "Testing how this works",
       "id": 1
+    },
+    {
+      "dateInterviewed": "2020-11-09",
+      "Case": "35",
+      "author": "Dan",
+      "criminalId": 2,
+      "note": "Test",
+      "id": 2
     }
   ]
 }

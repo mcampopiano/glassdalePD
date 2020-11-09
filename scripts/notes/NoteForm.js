@@ -39,7 +39,6 @@ eventHub.addEventListener("click", event => {
     // const suspect = document.querySelector("#note--suspect").value
     const note = document.querySelector("#note--note").value
     const criminalId = parseInt(document.querySelector("#noteForm--criminal").value)
-    console.log("criminalId: ", criminalId)
 
     const noteObj = {
         dateInterviewed,
@@ -49,7 +48,7 @@ eventHub.addEventListener("click", event => {
         note
 
     }
-    console.log("Here is my noteObj", noteObj)
+
 
     // This function was written in the data provider and will post the new object to database/api/json file
     saveNote(noteObj)
