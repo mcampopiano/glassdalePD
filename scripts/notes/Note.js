@@ -1,6 +1,6 @@
 // after refactoring to in chapter 13 this is no longer being used, but I don't want to delete yet until I know I won't need it later.
 
-export const noteHTML = noteObj => {
+const noteHTML = noteObj => {
     return `
     <section class="noteCard">
     <h3>Case ${noteObj.Case}</h3>
