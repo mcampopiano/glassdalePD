@@ -51,7 +51,6 @@ eventHub.addEventListener('crimeChosen', event => {
         const crimeId = convictionsArr.find(convictionObj => {
             return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
         })
-        console.log("crimeId", crimeId)
     let filteredCriminalHtmlRep = ""
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
@@ -61,7 +60,6 @@ eventHub.addEventListener('crimeChosen', event => {
         const matchingCriminals = appStateCriminals.filter(currentCriminal => {
             return currentCriminal.conviction === crimeId.name
         })
-        console.log("Matching criminals: ", matchingCriminals)
        for (const criminal of matchingCriminals) {
         filteredCriminalHtmlRep += CriminalHtml(criminal)
     }
@@ -84,12 +82,16 @@ eventHub.addEventListener('officerChosen', event => {
         const matchingCriminals = appStateCriminals.filter(currentCriminal => {
             return currentCriminal.arrestingOfficer === arrestingCop.name
         })
-        console.log("Matching criminals: ", matchingCriminals)
        for (const criminal of matchingCriminals) {
         filteredCriminalHtmlRep += CriminalHtml(criminal)
     }
     contentTarget.innerHTML = `<h2>Criminals:</h2> <p> ${filteredCriminalHtmlRep}</p>`
     }    
+})
+
+eventHub.addEventListener("facilitiesButtonClicked", event => {
+    contentTarget.classList.remove("criminalsContainer")
+    contentTarget.innerHTML = `<div></div>`
 })
 
 

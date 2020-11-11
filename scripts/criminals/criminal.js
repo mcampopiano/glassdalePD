@@ -11,7 +11,7 @@ export const CriminalHtml = (criminal, facilities) => {
         <p>Term start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</P>
         <p>Term end: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</P>
         <div>
-                <h2>Facilities</h2>
+                <h4>Facilities</h4>
                 <ul>
                         ${facilities.map(cf => `<li>${cf.facilityName}</li>`).join("")}
                 </ul>

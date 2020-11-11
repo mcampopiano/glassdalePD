@@ -10,7 +10,7 @@ import { NoteList } from "./notes/NoteList.js"
 import { OfficerList } from "./officers/officerList.js"
 import { OfficerSelect } from "./officers/officerSelect.js"
 import "./witnesses/witnessList.js"
-
+import "./facility/FacilityList.js"
 CriminalList()
 ConvictionSelect()
 OfficerList()
