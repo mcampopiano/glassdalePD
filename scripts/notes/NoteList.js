@@ -18,7 +18,7 @@ const render = (noteArr, criminalArr) => {
         <button id="deleteNote--${note.id}">Delete</button>
         </section>
         `
-    })
+    }).join("")
 }
 
 export const NoteList = () => {

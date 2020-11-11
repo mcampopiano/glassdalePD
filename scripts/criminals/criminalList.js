@@ -30,7 +30,6 @@ export const CriminalList = () => {
 }
 
 const render = (criminalArr, facilitiesArr, crimFacilitiesArr) => {
-    debugger
     let criminalHTMLRep = ""
     criminalHTMLRep = criminalArr.map(criminal => {
         // First take the criminal object and find the matching objects in the join table
@@ -49,11 +48,11 @@ const render = (criminalArr, facilitiesArr, crimFacilitiesArr) => {
 eventHub.addEventListener('crimeChosen', event => {
         const appStateCriminals = useCriminals()
         const convictionsArr = useConvictions()
+        const facilities = useFacilities()
+        const intersecTable = useCriminalFacilities()
         const crimeId = convictionsArr.find(convictionObj => {
             return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
         })
-        console.log("crimeId", crimeId)
-    let filteredCriminalHtmlRep = ""
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
         /*
@@ -62,21 +61,18 @@ eventHub.addEventListener('crimeChosen', event => {
         const matchingCriminals = appStateCriminals.filter(currentCriminal => {
             return currentCriminal.conviction === crimeId.name
         })
-        console.log("Matching criminals: ", matchingCriminals)
-       for (const criminal of matchingCriminals) {
-        filteredCriminalHtmlRep += CriminalHtml(criminal)
-    }
-    contentTarget.innerHTML = `<h2>Criminals:</h2> <p> ${filteredCriminalHtmlRep}</p>`
+        render(matchingCriminals, facilities, intersecTable)
     }    
 })
 // Listen for the event created in OfficerSelect.js
 eventHub.addEventListener('officerChosen', event => {
         const appStateCriminals = useCriminals()
         const officers = useOfficers()
+        const facilities = useFacilities()
+        const intersecTable = useCriminalFacilities()
         const arrestingCop = officers.find(officerObj => {
             return officerObj.id === event.detail.officerThatWasChosen
         })
-    let filteredCriminalHtmlRep = ""
     // Use the property you added to the event detail.
     if (event.detail.crimeThatWasChosen !== "0"){
         /*
@@ -85,12 +81,13 @@ eventHub.addEventListener('officerChosen', event => {
         const matchingCriminals = appStateCriminals.filter(currentCriminal => {
             return currentCriminal.arrestingOfficer === arrestingCop.name
         })
-        console.log("Matching criminals: ", matchingCriminals)
-       for (const criminal of matchingCriminals) {
-        filteredCriminalHtmlRep += CriminalHtml(criminal)
-    }
-    contentTarget.innerHTML = `<h2>Criminals:</h2> <p> ${filteredCriminalHtmlRep}</p>`
+        render(matchingCriminals, facilities, intersecTable)
     }    
+})
+
+eventHub.addEventListener("facilitiesButtonClicked", event => {
+    contentTarget.classList.remove("criminalsContainer")
+    contentTarget.innerHTML = `<div></div>`
 })
 
 

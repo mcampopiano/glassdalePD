@@ -7,7 +7,7 @@ header {
     
 }
 
-.criminalsContainer, .officersContainer {
+.criminalsContainer, .officersContainer, .facilityContainer--style {
     border: 4px solid black;
     display: flex;
     flex: 3;
@@ -16,7 +16,7 @@ header {
     margin-top: 3px;
 }
 
-.criminal-card, .officer-card, .statement--cards {
+.criminal-card, .officer-card, .statement--cards, .facility__card {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 1px;
@@ -25,7 +25,7 @@ header {
     margin-bottom: 5px;
 }
 
-.criminal-card:hover, .officer-card:hover, .statement--cards:hover {
+.criminal-card:hover, .officer-card:hover, .statement--cards:hover, .facility__card:hover {
     text-align: center;
     border: 3px double black;
     box-shadow: 0px 2px 13px 10px;
