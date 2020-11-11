@@ -1,14 +1,21 @@
 const eventHub = document.querySelector(".container")
 
 // Takes a criminal object and creates the html string
-export const CriminalHtml = (criminal) => {
+export const CriminalHtml = (criminal, facilities) => {
         return `
         <div class="criminal-card">
         <h3>${criminal.name}</h3>
         <p>Age: ${criminal.age}</P>
+        <p>Arresting Officer: ${criminal.arrestingOfficer}</P>
         <p>Crime: ${criminal.conviction}</P>
         <p>Term start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</P>
         <p>Term end: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</P>
+        <div>
+                <h2>Facilities</h2>
+                <ul>
+                        ${facilities.map(cf => `<li>${cf.facilityName}</li>`).join("")}
+                </ul>
+        </div>
         <button id="associates--${criminal.id}">Associate Alibis</button>
         </div>
         `
