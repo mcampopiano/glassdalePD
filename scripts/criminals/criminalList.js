@@ -30,7 +30,6 @@ export const CriminalList = () => {
 }
 
 const render = (criminalArr, facilitiesArr, crimFacilitiesArr) => {
-    debugger
     let criminalHTMLRep = ""
     criminalHTMLRep = criminalArr.map(criminal => {
         // First take the criminal object and find the matching objects in the join table
